@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "98603298793",
+    "project_id": "dukaan-8ba0e",
+    "storage_bucket": "dukaan-8ba0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:98603298793:android:be6ebf4678f050b4aba578",
+        "android_client_info": {
+          "package_name": "com.example.android.dukaan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "98603298793-0irn4fk6bqcadqgv3plgi7grqbvb1g2n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.dukaan",
+            "certificate_hash": "54e0efee495580f7309d060fcff0970a5309eb2c"
+          }
+        },
+        {
+          "client_id": "98603298793-s577q3kp45eq047efmp6lvkbd38icsi1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLPzis22zksS26e4P_3afAWBSXhi0ezeg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "98603298793-s577q3kp45eq047efmp6lvkbd38icsi1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
