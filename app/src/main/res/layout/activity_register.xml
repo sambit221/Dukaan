@@ -116,7 +116,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/register"
+        android:id="@+id/btn_register"
         style="@style/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
