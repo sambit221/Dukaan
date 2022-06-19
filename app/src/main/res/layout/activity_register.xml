@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -109,7 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30dp"
-            android:drawablePadding="15dp"
+            android:drawablePadding="20dp"
             android:fontFamily="@font/allerta"
             android:text="@string/i_agree_to_the_terms_and_conditions"
             android:textColor="@color/colorPrimary" />
@@ -145,46 +144,4 @@
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
-
-
-
 </LinearLayout>
-
-<!--    <?xml version="1.0" encoding="utf-8"?>-->
-<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--xmlns:tools="http://schemas.android.com/tools"-->
-<!--android:layout_width="match_parent"-->
-<!--android:layout_height="match_parent"-->
-<!--android:orientation="vertical"-->
-<!--tools:context=".activities.RegisterActivity">-->
-
-
-<!--&lt;!&ndash;    <androidx.appcompat.widget.Toolbar&ndash;&gt;-->
-<!--&lt;!&ndash;        android:id="@+id/toolbar"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
-<!--&lt;!&ndash;        android:background="@color/colorPrimary"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:title="@string/app_name"&ndash;&gt;-->
-<!--&lt;!&ndash;        app:titleTextColor="@color/white" />&ndash;&gt;-->
-
-<!--<LinearLayout-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:layout_marginHorizontal="20dp"-->
-<!--    android:orientation="vertical"-->
-<!--    android:paddingHorizontal="10dp">-->
-
-<!--    -->
-
-<!--    -->
-
-
-
-
-
-<!--    -->
-<!--</LinearLayout>-->
-
-
-
-<!--</LinearLayout>-->
