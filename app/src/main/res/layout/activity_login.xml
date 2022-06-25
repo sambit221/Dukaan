@@ -80,6 +80,7 @@
                 android:fontFamily="@font/allerta"
                 android:autofillHints="" />
             <TextView
+                android:id="@+id/tv_forgotPw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/forgot_password"
@@ -89,6 +90,7 @@
                 android:textSize="18sp"
                 android:textColor="@color/colorPrimary"/>
             <Button
+                android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_login"

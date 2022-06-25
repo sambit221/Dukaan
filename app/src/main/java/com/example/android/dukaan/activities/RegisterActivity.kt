@@ -95,10 +95,8 @@ class RegisterActivity : BaseActivity() {
 
         }
     }
-     //END
 
 
-    // START
     /**
      * A function to register the user with email and password using FirebaseAuth.
      */
@@ -107,6 +105,8 @@ class RegisterActivity : BaseActivity() {
         // Check with validate function if the entries are valid or not.
         if (validateRegisterDetails()) {
 
+            showProgressDialog("Please Wait")
+
             val email: String = et_mail.text.toString().trim { it <= ' ' }
             val password: String = et_mail.text.toString().trim { it <= ' ' }
 
@@ -114,16 +114,21 @@ class RegisterActivity : BaseActivity() {
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
 
+                    // hiding the progress dialog
+                    hideProgressDialog()
+
                     // If the registration is successfully done
                     if (task.isSuccessful) {
 
                         // Firebase registered user
                         val firebaseUser: FirebaseUser = task.result!!.user!!
-
                         showErrorSnackBar(
                             "You are registered successfully. Your user id is ${firebaseUser.uid}",
                             false
                         )
+                        FirebaseAuth.getInstance().signOut()
+                        finish()
+
                     } else {
                         // If the registering is not successful then show error message.
                         showErrorSnackBar(task.exception!!.message.toString(), true)
@@ -131,5 +136,4 @@ class RegisterActivity : BaseActivity() {
                 }
         }
     }
-    // END
 }
