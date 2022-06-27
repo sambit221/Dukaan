@@ -14,14 +14,12 @@ import com.google.firebase.auth.FirebaseUser
 
 class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var tvFp: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.tvForgotPw.setOnClickListener {
-            showErrorSnackBar("before", true)
             startActivity(Intent(this@LoginActivity, ForgotPasswordActivity::class.java))
         }
 
@@ -34,7 +32,6 @@ class LoginActivity : BaseActivity() {
             val i = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(i)
         }
-
     }
 
     /**
