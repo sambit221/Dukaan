@@ -86,7 +86,7 @@
                 android:text="@string/forgot_password"
                 android:layout_marginVertical="5dp"
                 android:textAlignment="textEnd"
-                android:layout_marginHorizontal="5dp"
+                android:paddingHorizontal="15dp"
                 android:textSize="18sp"
                 android:textColor="@color/colorPrimary"/>
             <Button
@@ -117,5 +117,6 @@
                     android:textColor="@color/colorPrimary"
                     android:text="@string/register"/>
             </LinearLayout>
+
         </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

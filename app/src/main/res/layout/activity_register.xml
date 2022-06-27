@@ -24,23 +24,12 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/allerta"
-        android:gravity="center"
-        android:text="@string/create_an_account"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/title_textSize"
-        android:textStyle="bold" />
+
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp">
 
 
         <LinearLayout

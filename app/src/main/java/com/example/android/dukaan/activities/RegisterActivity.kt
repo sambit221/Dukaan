@@ -37,19 +37,15 @@ class RegisterActivity : BaseActivity() {
         btn_register = findViewById(R.id.btn_register)
 
         tv_login.setOnClickListener {
-        val i = Intent( this@RegisterActivity, LoginActivity::class.java)
-        startActivity(i)
-        // Toast.makeText(this@RegisterActivity, "done", Toast.LENGTH_SHORT).show()
+            // launch the login screen when the user clicks on the text
+            onBackPressed()
         }
 
         btn_register.setOnClickListener {
-            registerUser()
-            // Toast.makeText(this@RegisterActivity, "done", Toast.LENGTH_SHORT).show()
+            registerUser() // validate user input and register the user to the firebase
         }
 
     }
-
-    // START
     /**
      * A function to validate the entries of a new user.
      */
@@ -108,7 +104,7 @@ class RegisterActivity : BaseActivity() {
             showProgressDialog("Please Wait")
 
             val email: String = et_mail.text.toString().trim { it <= ' ' }
-            val password: String = et_mail.text.toString().trim { it <= ' ' }
+            val password: String = et_pw.text.toString().trim { it <= ' ' }
 
             // Create an instance and create a register a user with email and password.
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
@@ -126,7 +122,7 @@ class RegisterActivity : BaseActivity() {
                             "You are registered successfully. Your user id is ${firebaseUser.uid}",
                             false
                         )
-                        FirebaseAuth.getInstance().signOut()
+                        FirebaseAuth.getInstance().signOut() // to signout
                         finish()
 
                     } else {
