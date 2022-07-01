@@ -13,7 +13,6 @@ class ForgotPasswordActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityForgotPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setupActionBar()
         binding.btnSubmit.setOnClickListener {
             val email:String = binding.etMail.text.toString().trim{it<=' '}
@@ -35,6 +34,7 @@ class ForgotPasswordActivity : BaseActivity() {
             }
         }
     }
+    // to setup actionbar
     private fun setupActionBar() {
         setSupportActionBar(binding.toolbarForgotPasswordActivity)
         val actionBar = supportActionBar
