@@ -8,23 +8,13 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tv_main"
         android:layout_margin="30dp"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="logged in successsfully" />
 
-    <TextView
-        android:layout_margin="20dp"
-        android:textSize="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="user id" />
-    <TextView
-        android:layout_margin="20dp"
-        android:textSize="25dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="user mail id" />
+
 
 </LinearLayout>

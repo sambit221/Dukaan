@@ -4,10 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import com.example.android.dukaan.R
+import com.example.android.dukaan.activities.firestore.FirestoreClass
+import com.example.android.dukaan.activities.models.User
 import com.example.android.dukaan.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -62,18 +65,36 @@ class LoginActivity : BaseActivity() {
 
             // Create an instance and create a register a user with email and password.
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-                    // hiding the progress dialog
-                    hideProgressDialog()
+
 
                     // If the registration is successfully done
                     if (task.isSuccessful) {
-                        showErrorSnackBar("You are logged in successfully.", false)
-                        // TODO - send user to main activity
+//                        showErrorSnackBar("You are logged in successfully.", false)
+                        FirestoreClass().getUserDetails(this@LoginActivity, )
                     } else {
+                        // hiding the progress dialog
+                        hideProgressDialog()
                         // If the registering is not successful then show error message.
                         showErrorSnackBar(task.exception!!.message.toString(), true)
                     }
                 }
         }
+    }
+
+    /**
+     * A function to notify user that logged in success and get the user details from the FireStore database after authentication.
+     */
+    fun userLoggedInSuccess(user: User) {
+        // Hide the progress dialog.
+        hideProgressDialog()
+
+        // Print the user details in the log as of now.
+        Log.i("First Name: ", user.firstName)
+        Log.i("Last Name: ", user.lastName)
+        Log.i("Email: ", user.email)
+
+        // Redirect the user to Main Screen after log in.
+        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        finish()
     }
 }

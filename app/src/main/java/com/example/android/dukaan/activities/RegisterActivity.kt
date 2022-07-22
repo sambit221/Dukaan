@@ -23,6 +23,7 @@ class RegisterActivity : BaseActivity() {
     private lateinit var et_rePw: EditText;
     private lateinit var tcChqBox: CheckBox;
     private lateinit var btn_register: Button;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        binding = ActivityRegisterBinding.inflate(layoutInflater)
@@ -110,6 +111,8 @@ class RegisterActivity : BaseActivity() {
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
 
+                    hideProgressDialog()
+
                     // If the registration is successfully done
                     if (task.isSuccessful) {
 
@@ -121,16 +124,11 @@ class RegisterActivity : BaseActivity() {
                             et_mail.text.toString().trim{it<=' '},
                             et_lastName.text.toString().trim{it<=' '},
                         )
-                        showErrorSnackBar(
-                            "You are registered successfully. Your user id is ${firebaseUser.uid}",
-                            false
-                        )
                         FirestoreClass().registerUser(this@RegisterActivity,user)
 //                        FirebaseAuth.getInstance().signOut() // to signout
 //                        finish()
 
                     } else {
-                        hideProgressDialog()
 
                         // If the registering is not successful then show error message.
                         showErrorSnackBar(task.exception!!.message.toString(), true)
