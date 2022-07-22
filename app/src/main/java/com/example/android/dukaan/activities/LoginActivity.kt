@@ -1,19 +1,14 @@
 package com.example.android.dukaan.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
-import android.view.View
-import android.widget.TextView
-import android.widget.Toast
 import com.example.android.dukaan.R
 import com.example.android.dukaan.activities.firestore.FirestoreClass
 import com.example.android.dukaan.activities.models.User
 import com.example.android.dukaan.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 
 class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -21,7 +16,6 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.tvForgotPw.setOnClickListener {
             startActivity(Intent(this@LoginActivity, ForgotPasswordActivity::class.java))
         }
@@ -52,6 +46,7 @@ class LoginActivity : BaseActivity() {
             } else -> { true }
         }
     }
+
     /**
      * A function to login the user with email and password using FirebaseAuth.
      */
@@ -65,7 +60,6 @@ class LoginActivity : BaseActivity() {
 
             // Create an instance and create a register a user with email and password.
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
-
 
                     // If the registration is successfully done
                     if (task.isSuccessful) {

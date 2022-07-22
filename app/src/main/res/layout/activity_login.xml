@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     tools:context="activities.LoginActivity">
-
-    <ImageView
-        android:id="@+id/img_splash_background"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/img_splash_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/splash_screen_background" />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/img_splash_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/ic_dukaan_brand"
-        android:contentDescription="@string/brand_icon" />
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_forgot_password_activity"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_gravity="top" />
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/img_splash_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/img_splash_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:contentDescription="@string/splash_screen_background" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="center"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/img_splash_background"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:src="@drawable/ic_dukaan_brand"
+                    android:contentDescription="@string/brand_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/img_splash_background"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:paddingHorizontal="10dp"
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_gravity="center"
-                android:layout_marginTop="15dp"
+                android:layout_marginVertical="35dp"
                 android:layout_marginBottom="10dp"
                 android:text="@string/title_login"
                 android:textColor="@color/colorPrimary"
@@ -61,8 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/enter_your_mail_id"
-                style="@style/loginScreenDesc"
-                />
+                style="@style/loginScreenDesc"/>
             <EditText
                 android:id="@+id/et_mail"
                 android:layout_width="match_parent"
@@ -86,7 +85,7 @@
                 android:fontFamily="@font/allerta"
                 android:autofillHints="" />
             <TextView
-                android:id="@+id/tv_forgotPw"
+                android:id="@+id/tv_ForgotPw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/forgot_password"
@@ -95,7 +94,7 @@
                 android:textSize="18sp"
                 android:textColor="@color/colorPrimary"/>
             <Button
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_Login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_login"
@@ -114,7 +113,7 @@
                     android:textColor="@color/colorSecondaryText"
                     android:text="@string/don_t_have_an_account"/>
                 <TextView
-                    android:id="@+id/tv_register"
+                    android:id="@+id/tv_Register"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
@@ -122,6 +121,7 @@
                     android:textColor="@color/colorPrimary"
                     android:text="@string/register"/>
             </LinearLayout>
-
         </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</ScrollView>
