@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
-import androidx.appcompat.widget.AppCompatTextView
 
 /**
  * This class will be used for Custom font text using the EditText which inherits the AppCompatEditText class.

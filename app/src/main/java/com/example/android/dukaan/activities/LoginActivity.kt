@@ -7,8 +7,10 @@ import android.util.Log
 import com.example.android.dukaan.R
 import com.example.android.dukaan.activities.firestore.FirestoreClass
 import com.example.android.dukaan.activities.models.User
+import com.example.android.dukaan.activities.utils.Constants
 import com.example.android.dukaan.databinding.ActivityLoginBinding
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.activity_user_profile.*
 
 class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -31,9 +33,7 @@ class LoginActivity : BaseActivity() {
         }
     }
 
-    /**
-     * A function to validate the entries of an user.
-     */
+    // A function to validate the entries of an user.
     private fun validateLoginDetails(): Boolean {
         return when {
             TextUtils.isEmpty(binding.etMail.text.toString().trim { it <= ' ' }) -> {
@@ -79,6 +79,7 @@ class LoginActivity : BaseActivity() {
      * A function to notify user that logged in success and get the user details from the FireStore database after authentication.
      */
     fun userLoggedInSuccess(user: User) {
+
         // Hide the progress dialog.
         hideProgressDialog()
 
@@ -87,8 +88,15 @@ class LoginActivity : BaseActivity() {
         Log.i("Last Name: ", user.lastName)
         Log.i("Email: ", user.email)
 
-        // Redirect the user to Main Screen after log in.
-        startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        if (user.profileCompleted == 0) {
+            // If the user profile is incomplete then launch the UserProfileActivity.
+            val intent = Intent(this@LoginActivity, UserProfileActivity::class.java)
+            intent.putExtra(Constants.EXTRA_USER_DETAIlS, user)
+            startActivity(intent)
+        } else {
+            // Redirect the user to Main Screen after log in.
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+        }
         finish()
     }
 }

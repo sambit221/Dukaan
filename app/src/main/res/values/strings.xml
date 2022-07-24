@@ -14,7 +14,7 @@
     <string name="abc_21">abc@#21</string>
     <string name="abc_gmail_com">abc@gmail.com</string>
     <string name="forgot_password">Forgot Password ?</string>
-    <string name="enter_your_mail_id">Enter your mail Id</string>
+    <string name="enter_your_mail_id">Enter your Email Id</string>
     <string name="login">Login</string>
     <string name="already_have_an_account">Already have an account ?</string>
     <string name="i_agree_to_the_terms_and_conditions">I agree to the terms and conditions</string>
@@ -36,5 +36,8 @@
 
     <string name="rb_lbl_male">MALE</string>
     <string name="rb_lbl_female">FEMALE</string>
+    <string name="rb_lbl_other">OTHER</string>
     <string name="btn_lbl_save">Save</string>
+    <string name="read_storage_permission_denied">Oops, you just denied the permission for storage. You can also allow it from settings.</string>
+    <string name="image_selection_failed">Image Selection Failed!</string>
 </resources>

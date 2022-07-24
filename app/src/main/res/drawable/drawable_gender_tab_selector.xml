@@ -13,9 +13,7 @@
     </item>
 
     <item android:state_checked="false">
-
         <shape android:shape="rectangle">
-
             <stroke android:width="@dimen/gender_radio_button_stroke_width"
                 android:color="@color/colorSecondaryText" />
 
